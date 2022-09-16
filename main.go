@@ -64,6 +64,8 @@ func main() {
 	} else {
 		machines := MachinesRawToMachines(raw)
 		if j, err := json.Marshal(machines); err != nil {
+			panic(err)
+		} else {
 			fmt.Println(string(j))
 		}
 	}
