@@ -63,8 +63,7 @@ func main() {
 		panic(err)
 	} else {
 		machines := MachinesRawToMachines(raw)
-		for _, machine := range machines {
-			j, _ := json.Marshal(machine)
+		if j, err := json.Marshal(machines); err != nil {
 			fmt.Println(string(j))
 		}
 	}
